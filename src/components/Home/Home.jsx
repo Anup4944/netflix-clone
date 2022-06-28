@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Home.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { BiPlay } from "react-icons/bi";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const apiKey = "8a217ad1fba928a82bffaf48c81d0841";
 
@@ -83,7 +85,28 @@ const Home = () => {
   }, []);
   return (
     <section className="home">
-      <div className="banner"></div>
+      <div
+        className="banner"
+        style={{
+          backgroundImage: populars[0]
+            ? `url(${`${imgUrl}/${populars[0].poster_path}`})`
+            : "",
+        }}
+      >
+        {populars[0] && <h1>{populars[0].original_title}</h1>}
+
+        {populars[0] && <p>{populars[0].overview}</p>}
+
+        <div>
+          <button>
+            Play <BiPlay />{" "}
+          </button>
+          <button>
+            My List
+            <AiOutlinePlus />
+          </button>
+        </div>
+      </div>
       <Row title={"Upcoming"} arr={upcomingMovies} />
       <Row title={"Now Playing"} arr={nowPlayings} />
       <Row title={"Top Rated"} arr={topRate} />
