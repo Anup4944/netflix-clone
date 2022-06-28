@@ -7,6 +7,12 @@ $bg-color: rgb(30, 30, 30);
 
 .row {
   padding: 1rem;
+  background-color: $bg-color;
+
+  > h2 {
+    font-weight: 300;
+    margin: 0.3rem;
+  }
 
   > div {
     display: flex;
@@ -16,7 +22,7 @@ $bg-color: rgb(30, 30, 30);
 
 .card {
   width: 200px;
-  margin: 1rem;
+  margin: 0.3rem;
   cursor: pointer;
   transition: transform 0.5s;
 
